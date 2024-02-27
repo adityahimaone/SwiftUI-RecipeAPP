@@ -1,38 +1,42 @@
 //
-//  MealCategoryCard.swift
+//  CategoryListAllView.swift
 //  Recipe App
 //
-//  Created by Aditya Himawan on 26/02/24.
+//  Created by Aditya Himawan on 27/02/24.
 //
 
 import SwiftUI
 
-struct MealCategoryCard: View {
-    var mealCategory: MealCategory
-    
-    init(mealCategory: MealCategory) {
-        self.mealCategory = mealCategory
-    }
+struct CategoryListAllView: View {
+    @StateObject private var categoriesVM = CategoriesVM()
     
     var body: some View {
-      VStack {
-        HStack {
-            VStack(alignment: .leading) {
-            asyncImage(for: mealCategory)
-          }
-//          .frame(maxWidth: .infinity)
-
-          VStack {
-            Text(mealCategory.strMeal)
-          }
-//          .frame(maxWidth: .infinity)
+        NavigationStack {
+            List {
+                ForEach(categoriesVM.categories, id: \.idCategory) { category in
+                    NavigationLink(destination: MealCategoryListView(categoryTitle: category.strCategory, categoryFilter: category.strCategory)) {
+                        HStack {
+                            asyncImage(for: category)
+                            Text(category.strCategory)
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.primary)
+                        }
+                    }
+                }
+                .listRowSeparator(.hidden)
+                .navigationTitle("All Categories")
+            }
+            .task {
+                await categoriesVM.fetchCategories()
+            }
         }
-      }
     }
     
-    func asyncImage(for mealCategory: MealCategory) -> some View {
+    // View for async image
+    func asyncImage(for category: Category) -> some View {
         Group {
-            if let url = URL(string: mealCategory.strMealThumb) {
+            if let url = URL(string: category.strCategoryThumb) {
                 AsyncImage(url: url) { phase in
                     switch phase {
                     case .empty:
@@ -66,5 +70,5 @@ struct MealCategoryCard: View {
 }
 
 #Preview {
-    MealCategoryCard(mealCategory: MealCategory.data[0])
+    CategoryListAllView()
 }

@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct MealCategoryListView: View {
+    let categoryTitle: String
+    let categoryFilter: String
+    @StateObject private var mealCategoriesVM = MealsVM()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                ForEach(mealCategoriesVM.mealsCategory, id: \.idMeal) { meal in
+                    NavigationLink(destination: Text("OTW")) {
+                        MealCategoryCard(mealCategory: meal)
+                    }
+                }
+                .listRowSeparator(.hidden)
+            }
+            .task {
+                await mealCategoriesVM.fetchMealsCategory(category: categoryFilter)
+            }
+            .navigationTitle(categoryTitle)
+        }
     }
 }
 
 #Preview {
-    MealCategoryListView()
+    MealCategoryListView(categoryTitle: "Beef", categoryFilter: "Beef")
 }

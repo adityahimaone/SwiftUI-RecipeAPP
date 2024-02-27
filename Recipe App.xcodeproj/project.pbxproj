@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B532BBC2B8E104400C53B15 /* CategoryListAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B532BBB2B8E104400C53B15 /* CategoryListAllView.swift */; };
 		3BFB9C462B8B406B007F9B9C /* Recipe_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB9C452B8B406B007F9B9C /* Recipe_AppApp.swift */; };
 		3BFB9C482B8B406B007F9B9C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB9C472B8B406B007F9B9C /* ContentView.swift */; };
 		3BFB9C4A2B8B406D007F9B9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BFB9C492B8B406D007F9B9C /* Assets.xcassets */; };
@@ -20,9 +21,15 @@
 		3BFB9C6E2B8B942E007F9B9C /* CategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB9C6D2B8B942E007F9B9C /* CategoryCardView.swift */; };
 		3BFB9C702B8B9918007F9B9C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB9C6F2B8B9918007F9B9C /* Home.swift */; };
 		3BFB9C752B8B9CC5007F9B9C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB9C742B8B9CC5007F9B9C /* MainTabView.swift */; };
+		3BFB9C772B8C1FF5007F9B9C /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB9C762B8C1FF5007F9B9C /* Meal.swift */; };
+		3BFB9C792B8C21B2007F9B9C /* MealCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB9C782B8C21B2007F9B9C /* MealCategoryCard.swift */; };
+		3BFB9C7B2B8C23BC007F9B9C /* MealCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB9C7A2B8C23BC007F9B9C /* MealCategoryListView.swift */; };
+		3BFB9C7D2B8C23F3007F9B9C /* MealsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB9C7C2B8C23F3007F9B9C /* MealsVM.swift */; };
+		3BFB9C7F2B8CB427007F9B9C /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB9C7E2B8CB427007F9B9C /* MealDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B532BBB2B8E104400C53B15 /* CategoryListAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListAllView.swift; sourceTree = "<group>"; };
 		3BFB9C422B8B406B007F9B9C /* Recipe App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BFB9C452B8B406B007F9B9C /* Recipe_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_AppApp.swift; sourceTree = "<group>"; };
 		3BFB9C472B8B406B007F9B9C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +44,11 @@
 		3BFB9C6D2B8B942E007F9B9C /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
 		3BFB9C6F2B8B9918007F9B9C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		3BFB9C742B8B9CC5007F9B9C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		3BFB9C762B8C1FF5007F9B9C /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		3BFB9C782B8C21B2007F9B9C /* MealCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategoryCard.swift; sourceTree = "<group>"; };
+		3BFB9C7A2B8C23BC007F9B9C /* MealCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategoryListView.swift; sourceTree = "<group>"; };
+		3BFB9C7C2B8C23F3007F9B9C /* MealsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsVM.swift; sourceTree = "<group>"; };
+		3BFB9C7E2B8CB427007F9B9C /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +81,10 @@
 		3BFB9C442B8B406B007F9B9C /* Recipe App */ = {
 			isa = PBXGroup;
 			children = (
-				3BFB9C582B8B466D007F9B9C /* Screens */,
 				3BFB9C572B8B465F007F9B9C /* Commons */,
 				3BFB9C562B8B4655007F9B9C /* ViewModels */,
 				3BFB9C552B8B464F007F9B9C /* Models */,
+				3BFB9C582B8B466D007F9B9C /* Screens */,
 				3BFB9C542B8B4629007F9B9C /* App */,
 				3BFB9C532B8B4621007F9B9C /* Resources */,
 				3BFB9C472B8B406B007F9B9C /* ContentView.swift */,
@@ -110,6 +122,7 @@
 			children = (
 				3BFB9C592B8B468A007F9B9C /* Recipe.swift */,
 				3BFB9C5D2B8B83EC007F9B9C /* Category.swift */,
+				3BFB9C762B8C1FF5007F9B9C /* Meal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				3BFB9C5F2B8B851F007F9B9C /* CategoriesVM.swift */,
+				3BFB9C7C2B8C23F3007F9B9C /* MealsVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -154,6 +168,10 @@
 			children = (
 				3BFB9C6B2B8B8C56007F9B9C /* CategoryListView.swift */,
 				3BFB9C6D2B8B942E007F9B9C /* CategoryCardView.swift */,
+				3B532BBB2B8E104400C53B15 /* CategoryListAllView.swift */,
+				3BFB9C782B8C21B2007F9B9C /* MealCategoryCard.swift */,
+				3BFB9C7A2B8C23BC007F9B9C /* MealCategoryListView.swift */,
+				3BFB9C7E2B8CB427007F9B9C /* MealDetailView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -253,14 +271,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BFB9C5A2B8B468A007F9B9C /* Recipe.swift in Sources */,
+				3BFB9C7B2B8C23BC007F9B9C /* MealCategoryListView.swift in Sources */,
 				3BFB9C5E2B8B83EC007F9B9C /* Category.swift in Sources */,
 				3BFB9C702B8B9918007F9B9C /* Home.swift in Sources */,
+				3BFB9C7D2B8C23F3007F9B9C /* MealsVM.swift in Sources */,
 				3BFB9C482B8B406B007F9B9C /* ContentView.swift in Sources */,
+				3BFB9C792B8C21B2007F9B9C /* MealCategoryCard.swift in Sources */,
+				3BFB9C772B8C1FF5007F9B9C /* Meal.swift in Sources */,
 				3BFB9C602B8B851F007F9B9C /* CategoriesVM.swift in Sources */,
 				3BFB9C752B8B9CC5007F9B9C /* MainTabView.swift in Sources */,
 				3BFB9C6E2B8B942E007F9B9C /* CategoryCardView.swift in Sources */,
 				3BFB9C682B8B8997007F9B9C /* Constants.swift in Sources */,
+				3BFB9C7F2B8CB427007F9B9C /* MealDetailView.swift in Sources */,
 				3BFB9C632B8B8888007F9B9C /* APIService.swift in Sources */,
+				3B532BBC2B8E104400C53B15 /* CategoryListAllView.swift in Sources */,
 				3BFB9C6C2B8B8C56007F9B9C /* CategoryListView.swift in Sources */,
 				3BFB9C462B8B406B007F9B9C /* Recipe_AppApp.swift in Sources */,
 			);

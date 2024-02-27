@@ -8,7 +8,7 @@
 import Foundation
 
 struct Category: Codable {
-    let idCategory: String // Identifiable property must be a constant
+    var idCategory: String // Identifiable property must be a constant
     var strCategory: String
     var strCategoryThumb: String
     var strCategoryDescription: String

@@ -8,30 +8,40 @@
 import SwiftUI
 
 struct CategoryListView: View {
+    let backgroundColor: Color
+    
     @StateObject private var categoriesVM = CategoriesVM()
+    
+    let gridItems = [GridItem(.fixed(150), spacing: 8)]
+    
     var body: some View {
-        ScrollView(.horizontal) {
-            LazyHStack {
-                ForEach(categoriesVM.categories, id: \.idCategory) { category in
-                    NavigationLink(destination: Text("OTW")) {
-                        CategoryCardView(category: category)
+        NavigationStack {
+            List {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHGrid(rows: gridItems, spacing: 12) {
+                        ForEach(categoriesVM.categories.prefix(8), id: \.idCategory) { category in
+                            NavigationLink(destination: MealCategoryListView(categoryTitle: category.strCategory, categoryFilter: category.strCategory)) {
+                                CategoryCardView(category: category)
+                            }
+                        }
                     }
+                    .padding()
+                    .scrollTargetLayout()
                 }
+                .scrollTargetBehavior(.viewAligned)
+                .contentMargins(4, for: .scrollContent)
+                .listRowInsets(EdgeInsets())
+                .listRowSeparator(.hidden)
+                .background(backgroundColor)
             }
-            .overlay(
-                VStack(alignment: .center) {
-                    if categoriesVM.categories.isEmpty {
-                        ProgressView()
-                    }
-                }
-            )
-            .task {
-                await categoriesVM.fetchCategories()
-            }
+            .listStyle(.plain)
+        }
+        .task {
+            await categoriesVM.fetchCategories()
         }
     }
 }
 
 #Preview {
-    CategoryListView()
+    CategoryListView(backgroundColor: .orangeSecondary)
 }
